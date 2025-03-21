@@ -8,6 +8,7 @@ import { abeezee } from '@/config/fonts';
 import Footer from './shared/components/layout/Footer/Footer';
 import Header from './shared/components/layout/Header/Header';
 import { Toaster } from 'sonner';
+import { Theme } from "@radix-ui/themes";
 // import { Toaster } from '@/components/ui/sonner';
 
 // export const metadata: Metadata = {
@@ -33,12 +34,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html suppressHydrationWarning lang="en">
       <head />
       <body className={clsx('min-h-screen bg-background font-sans antialiased', abeezee.variable)}>
+        <Theme>
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'white' }}>
           <Header />
           <main>{children}</main>
           <Toaster />
           <Footer />
         </Providers>
+        </Theme>
       </body>
     </html>
   );

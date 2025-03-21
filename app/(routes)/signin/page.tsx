@@ -38,10 +38,6 @@ export default function Page() {
       <Button size="m" onClick={async () => await signupHandler()} style="black_outline">
         Регистрация
       </Button>
-
-      {/* <Button size="m" onClick={() => {}} style="black_outline">
-        
-      </Button> */}
     </div>
   );
 }

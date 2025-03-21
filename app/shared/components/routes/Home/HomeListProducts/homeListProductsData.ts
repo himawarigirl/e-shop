@@ -66,7 +66,7 @@ const homeListProductsNewArrivals: IProduct[] = [
   },
 ];
 
-const homeListProductsBestSellers: IProduct[] = [
+export const homeListProductsBestSellers: IProduct[] = [
   {
     title: 'AirPods Max Silver',
     price: 549,

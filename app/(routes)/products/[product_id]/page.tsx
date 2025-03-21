@@ -16,6 +16,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import ProductsMark from '@/app/shared/components/routes/Products/ProductsMark/ProductsMark';
+import ProductsReview from '@/app/shared/components/routes/Products/ProductsReview/ProductsReview';
 
 export default function Page() {
   const params = useParams();
@@ -161,7 +162,11 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <ProductsMark />
+      <div className='flex justify-around'>
+        <ProductsMark />
+        <ProductsReview/>
+      </div>
+      
       {/* <Dialog>
         <DialogTrigger>Open</DialogTrigger>
         <DialogContent>
