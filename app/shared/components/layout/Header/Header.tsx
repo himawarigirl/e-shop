@@ -12,6 +12,13 @@ import { useDebounceCallback } from '@/app/shared/hooks/useDebounceCallback';
 import { useUserStore } from '@/app/shared/core/providers/userProvider';
 import { useRouter } from 'next/navigation';
 import { useLocalStorage } from '@/app/shared/hooks/useLocalStorage';
+import Link from 'next/link';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+
 
 const Header = () => {
   const [value, setValue, removeValue] = useLocalStorage('token', '');
@@ -57,11 +64,22 @@ const Header = () => {
                 <WishList className={s.buttons__WishList} />
               </button>
             </div>
+            <HoverCard>
+                  <HoverCardTrigger>
+                    {' '}
+                    <Link href={'/favorite'}>Hover</Link>
+                  </HoverCardTrigger>
+                  <HoverCardContent>The React Framework – created and maintained by @vercel.</HoverCardContent>
+                </HoverCard>
             <div className={s.buttons__item}>
               <button className={cn(s.buttons__btn, s.btn_cart)}>
                 <Cart className={s.buttons__Cart} />
               </button>
             </div>
+            <HoverCard>
+             <HoverCardTrigger> <Link href={'/cart'}>Hover</Link></HoverCardTrigger>
+              <HoverCardContent>The React Framework – created and maintained by @vercel.</HoverCardContent>
+            </HoverCard>
 
             {user_id !== 0 ? (
               <div className="flex gap-4 items-center">
